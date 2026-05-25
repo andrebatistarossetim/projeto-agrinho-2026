@@ -1,1 +1,15 @@
+deixe umidadeSolo = 30; // Começa seco let reservatórioÁgua = 100; deixe sistemaLigado = false;
 
+function setup() { createCanvas(400, 400); }
+
+função desenhar() { fundo(220);
+
+// Interface de monitoramento textAlign(LEFT); tamanhodotexto(16); text("🌱 Umidade do Solo: " + umidadeSolo + "%", 20, 50); text("💧 Reservatório: " + reservatórioÁgua + "%", 20, 80);
+
+// Lógica do Equilíbrio Sustentável (Tema Agrinho) // O sistema só irriga se a umidade para baixa, economizando água if (umidadeSolo < 40 && reservatorioAgua > 0) { sistemaLigado = true; umidadeSolo += 0,2; reservatórioÁgua -= 0,1; } else { sistemaLigado = false; umidadeSolo -= 0,05; // Solo seco naturalmente }
+
+status(); }
+
+function exibirStatus() { fill(sistemaLigado ? "azul" : "vermelho"); rect(20, 110, 150, 30); preencher(255); text(sistemaLigado ? "IRRIGANDO..." : "SISTEMA EM ESPERA", 30, 130);
+
+preencher(0); tamanhodotexto(12); text("Objetivo: Manter a umidade acima de 40% com o mínimo de água.", 20, 180); }
